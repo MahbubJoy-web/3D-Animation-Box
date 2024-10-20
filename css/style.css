@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh ;
+    background: black;
+}
+.cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate {
+    0%
+    {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%
+    {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+.cube div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.cube div span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(7,255,35,1) 0%, rgba(0,0,0,1) 97%);    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px);
+}
+.top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #0f0;
+    transform: translateZ(-400px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(0,255,0,0.2) ,
+    0 0 200px rgba(0,255,0,0.4),
+    0 0 300px rgba(0,255,0,0.6),
+    0 0 400px rgba(0,255,0,0.8),
+    0 0 500px rgba(0,255,0,1);
+}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+.cube span h1 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Merriweather", serif;
+    color: aliceblue;
+}
+.cube span h2 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Merriweather", serif;
+    color: aliceblue;
+}
+.cube span h3 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Merriweather", serif;
+    color: aliceblue;
+}
+.cube span h4 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Merriweather", serif;
+    color: aliceblue;
+}
+.main {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    width: 310px;
+    height: 200px;
+    background: transparent ;
+    box-shadow: -3px 2px 41px 0px rgba(224, 255, 212, 0.75);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* ------------------------input------------------------ */
+.input-field {
+    position: relative;
+    margin-bottom: 25px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Protest+Guerrilla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sofadi+One&display=swap');
+
+.input-field label {
+    position: absolute;
+    top: 10px;
+    left: 62px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    color: #4fff72;
+    pointer-events: none;
+    transition: all 0.3s;
+    text-align: center;
+    
+    transition: all .3s;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 20px;
+    border: 1px solid #33ff2c;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    text-align: center;
+    background: transparent;
+    color: #33ff2c;
+}
+
+.input-field input:focus {
+    border-color: rgb(118, 235, 116);
+    box-shadow: -3px 2px 41px 0px rgba(68,237,66,0.36);
+    outline: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Protest+Guerrilla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+    transform: rotate(360deg);
+    top: -40px;
+    left: 50px;
+    font-size: 24px;
+    color: #4fff72;
+    font-weight: 700;
+    font-family: "Protest Guerrilla", sans-serif;
+}
+.input-field input:not(:placeholder-shown) {
+    border-color: #74ebd5;
+}
+/* ============================input================================== */
+/* ----------------------button------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mingzat&display=swap');
+
+:root {
+    --clr-neon : #4fff72;
+    --clr-bg:#001414;
+    --font-size: 18px;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+.Neon {
+    font-size: var(--font-size);
+    color: #4fff72;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border:  var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+    text-shadow:
+       0 0 .20em transparent,
+       0px 10px 3px var(--clr-neon);
+    box-shadow: 
+        inset 0 0.5em var(--clr-neon),
+        0 0.5em var(--clr-neon) opacity: blur;
+
+}
+.Neon::before {
+    content: "";
+    position: absolute;
+    top:140%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-neon);
+    transform: 
+    perspective(0.20em)
+    rotateX('10deg')
+    scale(1.3, 0.40);
+    filter: blur( 00.5em);
+    opacity: 0.6;
+    pointer-events: none;
+    transition:  opacity 100ms linear;
+}
+.Neon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--clr-neon);
+    box-shadow:  0 0 2em var(--clr-neon);
+    z-index: -1;
+    opacity: 0;
+    transition:  opacity 100ms linear;
+}
+.Neon:hover::after {
+    opacity: 1;
+}
+.Neon:hover, .Neon:focus{
+    color: rgb(0, 0, 0);
+}
+.Neon:hover::before{
+    opacity: 0.8;
+}
+/* ============================button======================== */
